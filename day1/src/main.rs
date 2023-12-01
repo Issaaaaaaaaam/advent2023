@@ -6,7 +6,17 @@ fn main() {
     let reader = BufReader::new(file);
     let mut sum:usize = 0; 
     for line in reader.lines() {
-        let char_vec: Vec<char> = line.expect("Something happened in the lines").chars().collect();
+        let char_vec: Vec<char> = line.expect("Something happened in the lines").replace("one", "o1ne")
+                                                            .replace("two", "t2wo")
+                                                            .replace("three", "th3ree")
+                                                            .replace("four", "f4our")
+                                                            .replace("five", "f5ive")
+                                                            .replace("six", "s6ix")
+                                                            .replace("seven", "sev7en")
+                                                            .replace("eight", "eig8ht")
+                                                            .replace("nine", "ni9ne")
+                                                            .replace("ten", "ze0ro").chars().collect();
+        //println!("{:?}", char_vec);
         let mut number:String= Default::default(); 
         for character in char_vec {
             match character { 
