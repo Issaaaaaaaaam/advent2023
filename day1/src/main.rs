@@ -35,7 +35,6 @@ fn main() {
         }
         if number.len() == 1 {
         }
-        println!("{}", number);
         sum += number.parse::<usize>().expect("Not a number")
     }
     println!("Sum: {}", sum)
