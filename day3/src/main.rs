@@ -1,10 +1,6 @@
 use std::fs::File;
 use std::io::{prelude::*, BufReader};
 
-
-
-
-
 fn find_string_index(position: usize, strings: Vec<&str>) -> Option<usize> {
     let mut cumulative_len = 0;
 
@@ -17,9 +13,8 @@ fn find_string_index(position: usize, strings: Vec<&str>) -> Option<usize> {
 
         cumulative_len = next_cumulative_len;
     }
-    None // Position is out of range
+    None
 }
-
 fn main() {
     let file = File::open("test_input.txt").unwrap();
     let reader = BufReader::new(file);
